@@ -19,7 +19,11 @@ export default function AdminLogin() {
     e.preventDefault();
     setMessage('');
     try {
+<<<<<<< HEAD
       const res = await fetch(`${API_BASE}/admin/login`, {
+=======
+      const res = await fetch('https://bank-management-6r4z.onrender.com/api/admin/login', {
+>>>>>>> 88ebaeb296649f175d676b75ca496f147bf7d3f6
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(form),
