@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
 import './Login.css'; // Import the styles below
+import { API_BASE } from './apiConfig';
 
 function Login() {
   const [form, setForm] = useState({ email: '', mpin: '' });
@@ -20,7 +21,7 @@ function Login() {
     setMessage('');
     setShowForgotLink(false);
     try {
-      const res = await fetch('http://localhost:5000/api/customers/login', {
+      const res = await fetch(`${API_BASE}/customers/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

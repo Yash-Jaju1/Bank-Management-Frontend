@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { BrowserRouter as Router, Route, Routes, useParams, Navigate } from 'react-router-dom';
+import { API_BASE } from './apiConfig';
 
 import CustomerRegister from './CustomerRegister';
 import Login from './Login';

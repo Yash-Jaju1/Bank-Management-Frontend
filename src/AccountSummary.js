@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import { API_BASE } from './apiConfig';
 
 function AccountSummary({ customerId }) {
   const [summary, setSummary] = useState(null);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/transactions/summary/${customerId}`)
+    fetch(`${API_BASE}/transactions/summary/${customerId}`)
       .then(res => res.json())
       .then(data => {
         if (!data.error) setSummary(data);

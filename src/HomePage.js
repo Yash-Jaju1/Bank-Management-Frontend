@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ThemeContext } from './ThemeContext';
 import './HomePage.css';
+import { API_BASE } from './apiConfig';
 
 // Example logo — replace with your real logo if available
 const bankLogoUrl = 'https://img.icons8.com/ios-filled/100/228be6/bank.png';

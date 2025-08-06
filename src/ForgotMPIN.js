@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { API_BASE } from './apiConfig';
 
 function ForgotMPIN() {
   const [step, setStep] = useState(1); // 1: email, 2: otp, 3: new mpin
@@ -17,7 +18,7 @@ function ForgotMPIN() {
       return;
     }
     try {
-      const res = await fetch('http://localhost:5000/api/otp/request-otp', {
+      const res = await fetch(`${API_BASE}/otp/request-otp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, reason: 'forgot-mpin' }),
@@ -43,7 +44,7 @@ function ForgotMPIN() {
       return;
     }
     try {
-      const res = await fetch('http://localhost:5000/api/otp/verify-otp', {
+      const res = await fetch(`${API_BASE}/otp/verify-otp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, otp }),
@@ -69,7 +70,7 @@ function ForgotMPIN() {
       return;
     }
     try {
-      const res = await fetch('http://localhost:5000/api/customers/update-mpin', {
+      const res = await fetch(`${API_BASE}/customers/update-mpin`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, newMpin }),

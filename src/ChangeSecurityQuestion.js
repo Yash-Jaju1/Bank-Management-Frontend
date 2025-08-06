@@ -1,6 +1,7 @@
 // src/components/ChangeSecurityQuestion.js
 import React, { useState } from 'react';
 import OTPVerification from './OTPVerification';
+import { API_BASE } from './apiConfig';
 
 function ChangeSecurityQuestion({ email }) {
   const [otpVerified, setOtpVerified] = useState(false);
@@ -17,7 +18,7 @@ function ChangeSecurityQuestion({ email }) {
       return;
     }
     try {
-      const res = await fetch('http://localhost:5000/api/customers/update-security-question', {
+      const res = await fetch(`${API_BASE}/customers/update-security-question`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, question, answer }),

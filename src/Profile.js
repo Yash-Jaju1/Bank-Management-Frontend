@@ -3,6 +3,7 @@ import { AuthContext } from './AuthContext';
 import { ThemeContext } from './ThemeContext';
 import './TransactionForm.css';
 import { useParams } from 'react-router-dom';
+import { API_BASE } from './apiConfig';
 
 export default function Profile() {
   const { customerId } = useParams();
@@ -22,7 +23,7 @@ export default function Profile() {
 
   useEffect(() => {
     // Fetch profile data on mount
-    fetch(`http://localhost:5000/api/customers/${customerId}`, {
+    fetch(`${API_BASE}/customers/${customerId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -56,7 +57,7 @@ export default function Profile() {
     setMessage('');
 
     try {
-      const res = await fetch(`http://localhost:5000/api/customers/profile/${customerId}`, {
+      const res = await fetch(`${API_BASE}/customers/profile/${customerId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

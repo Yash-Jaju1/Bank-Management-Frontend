@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { AuthContext } from './AuthContext';
 import ChangeMPIN from './ChangeMPIN';               // OTP-integrated MPIN change
 import ChangeSecurityQuestion from './ChangeSecurityQuestion'; // OTP-integrated security question change
+import { API_BASE } from './apiConfig';
 
 function CustomerProfile() {
   const { user } = useContext(AuthContext);
@@ -11,7 +12,7 @@ function CustomerProfile() {
   // Fetch profile on mount
   useEffect(() => {
     if (!user?.customerId) return;
-    fetch(`http://localhost:5000/api/customers/${user.customerId}`)
+    fetch(`${API_BASE}/customers/${user.customerId}`)
       .then(res => res.json())
       .then(data => setForm({
         name: data.name || '',
@@ -31,7 +32,7 @@ function CustomerProfile() {
     e.preventDefault();
     setProfileMsg('');
     try {
-      const res = await fetch(`http://localhost:5000/api/customers/profile/${user.customerId}`, {
+      const res = await fetch(`${API_BASE}/customers/profile/${user.customerId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)

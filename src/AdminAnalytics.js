@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { AdminAuthContext } from './AdminAuthContext';
 import AdminNav from './AdminNav';
 import './AdminAnalytics.css';
+import { API_BASE } from './apiConfig';
 
 export default function AdminAnalytics() {
   const { token } = useContext(AdminAuthContext);
@@ -14,19 +15,19 @@ export default function AdminAnalytics() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/admin/analytics/total-customers', {
+    fetch(`${API_BASE}admin/analytics/total-customers`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
       .then(data => setTotals(t => ({ ...t, totalCustomers: data.totalCustomers })));
 
-    fetch('http://localhost:5000/api/admin/analytics/total-transactions', {
+    fetch(`${API_BASE}/admin/analytics/total-transactions`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
       .then(data => setTotals(t => ({ ...t, ...data })));
 
-    fetch('http://localhost:5000/api/admin/analytics/customer-growth', {
+    fetch(`${API_BASE}/admin/analytics/customer-growth`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())

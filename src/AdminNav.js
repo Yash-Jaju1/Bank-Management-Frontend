@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './AdminNav.css';
+import { API_BASE } from './apiConfig';
 
 function normalizePathname(pathname) {
   return pathname.endsWith('/') && pathname.length > 1

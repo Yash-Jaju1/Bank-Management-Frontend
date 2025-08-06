@@ -1,5 +1,6 @@
 // src/components/OTPVerification.js
 import React, { useState } from 'react';
+import { API_BASE } from './apiConfig';
 
 function OTPVerification({ email, reason, onVerified }) {
   const [loading, setLoading] = useState(false);
@@ -14,7 +15,7 @@ function OTPVerification({ email, reason, onVerified }) {
     setError('');
     setMessage('');
     try {
-      const res = await fetch('http://localhost:5000/api/otp/request-otp', {
+      const res = await fetch(`${API_BASE}/otp/request-otp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, reason }),
@@ -38,7 +39,7 @@ function OTPVerification({ email, reason, onVerified }) {
     setError('');
     setMessage('');
     try {
-      const res = await fetch('http://localhost:5000/api/otp/verify-otp', {
+      const res = await fetch(`${API_BASE}/otp/verify-otp`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, otp }),

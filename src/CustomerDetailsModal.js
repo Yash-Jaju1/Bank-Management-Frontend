@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './AdminCustomerForm.css'; // To reuse button styles, etc.
+import { API_BASE } from './apiConfig';
 
 function CustomerDetailsModal({ customerId, onClose }) {
   const [customer, setCustomer] = useState(null);
@@ -9,7 +10,7 @@ function CustomerDetailsModal({ customerId, onClose }) {
     if (!customerId) return;
 
     setLoading(true);
-    fetch(`http://localhost:5000/api/admin/customers/${customerId}`, {
+    fetch(`${API_BASE}/admin/customers/${customerId}`, {
       headers: { Authorization: `Bearer ${localStorage.getItem('adminToken')}` },
     })
       .then(res => res.json())

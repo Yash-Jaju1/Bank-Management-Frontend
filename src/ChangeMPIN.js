@@ -1,6 +1,7 @@
 // src/components/ChangeMPIN.js
 import React, { useState } from 'react';
 import OTPVerification from './OTPVerification';
+import { API_BASE } from './apiConfig';
 
 function ChangeMPIN({ email }) {
   const [otpVerified, setOtpVerified] = useState(false);
@@ -16,7 +17,7 @@ function ChangeMPIN({ email }) {
       return;
     }
     try {
-      const res = await fetch('http://localhost:5000/api/customers/update-mpin', {
+      const res = await fetch(`${API_BASE}/customers/update-mpin`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, newMpin: mpin }),

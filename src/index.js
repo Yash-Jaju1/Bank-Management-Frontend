@@ -4,6 +4,7 @@ import App from './App';
 import { AuthProvider } from './AuthContext';
 import { AdminAuthProvider } from './AdminAuthContext';
 import { ThemeProvider } from './ThemeContext';
+import { API_BASE } from './apiConfig';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

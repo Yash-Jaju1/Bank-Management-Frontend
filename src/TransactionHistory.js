@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { AdminAuthContext } from './AdminAuthContext';
+import { API_BASE } from './apiConfig';
 
 function TransactionHistory({ customerId }) {
   const [transactions, setTransactions] = useState([]);
@@ -13,7 +14,7 @@ function TransactionHistory({ customerId }) {
 
   const fetchTransactions = () => {
     setLoading(true);
-    let url = `http://localhost:5000/api/transactions/history/${customerId}?page=${page}&limit=10`;
+    let url = `${API_BASE}/transactions/history/${customerId}?page=${page}&limit=10`;
     if (startDate) url += `&startDate=${startDate}`;
     if (endDate) url += `&endDate=${endDate}`;
 

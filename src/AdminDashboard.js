@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import './AdminDashboard.css';
 import { Link } from 'react-router-dom'; 
 import AdminNav from './AdminNav';
+import { API_BASE } from './apiConfig';
 
 
 export default function AdminDashboard() {
@@ -13,7 +14,7 @@ export default function AdminDashboard() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/admin/customers', {
+    fetch(`${API_BASE}/admin/customers`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then(res => res.json())
@@ -28,7 +29,7 @@ export default function AdminDashboard() {
   const handleDelete = async (customerId) => {
     if (!window.confirm('Are you sure?')) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/admin/customers/${customerId}`, {
+      const res = await fetch(`${API_BASE}/admin/customers/${customerId}`, {
         method: 'DELETE',
         headers: { Authorization: `Bearer ${token}` },
       });

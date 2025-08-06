@@ -3,6 +3,7 @@ import React, { useState, useContext } from 'react';
 import { AuthContext } from './AuthContext';
 import './TransactionForm.css';
 import { useParams } from 'react-router-dom';
+import { API_BASE } from './apiConfig';
 
 export default function Transfer() {
   const { customerId: fromCustomerId } = useParams();
@@ -29,7 +30,7 @@ export default function Transfer() {
 
     try {
       // Step 1: Lookup recipient by account number (you must implement this backend route)
-      const resRecipient = await fetch(`http://localhost:5000/api/customers/by-account/${encodeURIComponent(recipientAccount.trim())}`, {
+      const resRecipient = await fetch(`${API_BASE}/customers/by-account/${encodeURIComponent(recipientAccount.trim())}`, {
         headers: { Authorization: `Bearer ${token}` }
       });
 
@@ -48,7 +49,7 @@ export default function Transfer() {
       }
 
       // Step 2: Do the transfer with the actual customer IDs
-      const resTransfer = await fetch('http://localhost:5000/api/transactions/transfer', {
+      const resTransfer = await fetch(`${API_BASE}/transactions/transfer`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json', 

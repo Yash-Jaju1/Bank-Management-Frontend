@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import { API_BASE } from './apiConfig';
 
 // Create AuthContext
 export const AuthContext = createContext();

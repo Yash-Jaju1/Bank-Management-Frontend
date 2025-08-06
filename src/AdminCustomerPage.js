@@ -4,6 +4,7 @@ import AdminCustomerForm from './AdminCustomerForm';
 import CustomerDetailsModal from './CustomerDetailsModal';
 import Modal from './Modal';
 import './AdminCustomerPage.css';
+import { API_BASE } from './apiConfig';
 
 function AdminCustomerPage() {
   const [editingCustomerId, setEditingCustomerId] = useState(null);

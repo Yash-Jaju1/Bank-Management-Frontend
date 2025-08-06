@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthContext';
 import './Dashboard.css';
+import { API_BASE } from './apiConfig';
 
 export default function Dashboard({ customerId }) {
   const [customer, setCustomer] = useState(null);
@@ -11,12 +12,12 @@ export default function Dashboard({ customerId }) {
 
   useEffect(() => {
     // Fetch customer info
-    fetch(`http://localhost:5000/api/customers/${customerId}`)
+    fetch(`${API_BASE}/customers/${customerId}`)
       .then(res => res.json())
       .then(data => setCustomer(data));
 
     // Fetch transaction history
-    fetch(`http://localhost:5000/api/transactions/history/${customerId}`)
+    fetch(`${API_BASE}/transactions/history/${customerId}`)
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) setTransactions(data);

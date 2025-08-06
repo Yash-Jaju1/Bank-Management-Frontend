@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 import { ThemeContext } from './ThemeContext';
+import { API_BASE } from './apiConfig';
 
 function CustomerRegister() {
   const { theme } = useContext(ThemeContext);
@@ -26,7 +27,7 @@ function CustomerRegister() {
     e.preventDefault();
     setMessage('');
     try {
-      const response = await fetch('http://localhost:5000/api/customers', {
+      const response = await fetch(`${API_BASE}/customers`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form)

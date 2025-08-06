@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ThemeContext } from './ThemeContext'; // import your ThemeContext
 import './TransactionDetail.css'; // create this for styling
+import { API_BASE } from './apiConfig';
 
 function TransactionDetail() {
   const { transactionId } = useParams();
@@ -11,7 +12,7 @@ function TransactionDetail() {
   const { theme } = useContext(ThemeContext); // get current theme
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/transactions/${transactionId}`)
+    fetch(`${API_BASE}/transactions/${transactionId}`)
       .then(res => {
         if (!res.ok) throw new Error('Transaction not found');
         return res.json();

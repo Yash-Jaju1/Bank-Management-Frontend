@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import { API_BASE } from './apiConfig';
 
 function TransactionForm({ customerId, type }) {
   const [amount, setAmount] = useState('');
   const [remarks, setRemarks] = useState('');
   const [transferAccountId, setTransferAccountId] = useState('');
   const [message, setMessage] = useState('');
+  
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -14,11 +16,11 @@ function TransactionForm({ customerId, type }) {
     let body = { amount: Number(amount), remarks };
 
     if (type === 'deposit') {
-      url = `http://localhost:5000/api/transactions/deposit/${customerId}`;
+      url = `${API_BASE}/transactions/deposit/${customerId}`;
     } else if (type === 'withdraw') {
-      url = `http://localhost:5000/api/transactions/withdraw/${customerId}`;
+      url = `${API_BASE}/transactions/withdraw/${customerId}`;
     } else if (type === 'transfer') {
-      url = `http://localhost:5000/api/transactions/transfer`;
+      url = `${API_BASE}/transactions/transfer`;
       body = {
         fromCustomerId: customerId,
         toCustomerId: transferAccountId,

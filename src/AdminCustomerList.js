@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { AdminAuthContext } from './AdminAuthContext';
 import AdminNav from './AdminNav';
 import './AdminCustomerList.css';
+import { API_BASE } from './apiConfig';
 
 function AdminCustomerList({ onEdit, onViewDetails, refreshFlag }) {
   const [customers, setCustomers] = useState([]);
@@ -13,7 +14,7 @@ function AdminCustomerList({ onEdit, onViewDetails, refreshFlag }) {
   const { token } = useContext(AdminAuthContext);
 
   const fetchCustomers = () => {
-    let url = `http://localhost:5000/api/admin/customers?page=${page}&limit=${pageSize}`;
+    let url = `${API_BASE}/admin/customers?page=${page}&limit=${pageSize}`;
     if (search) url += `&search=${encodeURIComponent(search)}`;
 
     fetch(url, { headers: { Authorization: `Bearer ${token}` } })
@@ -42,7 +43,7 @@ function AdminCustomerList({ onEdit, onViewDetails, refreshFlag }) {
   const handleDelete = (customerId) => {
     if (!window.confirm('Are you sure you want to delete this customer?')) return;
 
-    fetch(`http://localhost:5000/api/admin/customers/${customerId}`, {
+    fetch(`${API_BASE}/admin/customers/${customerId}`, {
       method: 'DELETE',
       headers: { Authorization: `Bearer ${token}` },
     })

@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { AuthContext } from './AuthContext';
 import './TransactionForm.css';
 import { useParams } from 'react-router-dom';
+import { API_BASE } from './apiConfig';
 
 
 export default function Deposit() {
@@ -22,7 +23,7 @@ export default function Deposit() {
     }
 
     try {
-      const res = await fetch(`http://localhost:5000/api/transactions/deposit/${customerId}`, {
+      const res = await fetch(`${API_BASE}/transactions/deposit/${customerId}`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json', 

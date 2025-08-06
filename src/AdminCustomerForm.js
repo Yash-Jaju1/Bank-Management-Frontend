@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './AdminCustomerForm.css';
+import { API_BASE } from './apiConfig';
 
 function AdminCustomerForm({ customerId, onSuccess, onCancel }) {
   const [form, setForm] = useState({
@@ -17,7 +18,7 @@ function AdminCustomerForm({ customerId, onSuccess, onCancel }) {
 
   useEffect(() => {
     if (customerId) {
-      fetch(`http://localhost:5000/api/admin/customers/${customerId}`, {
+      fetch(`${API_BASE}/admin/customers/${customerId}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('adminToken')}` },
       })
         .then(res => res.json())
@@ -55,8 +56,8 @@ function AdminCustomerForm({ customerId, onSuccess, onCancel }) {
     setMessage('');
     const method = customerId ? 'PUT' : 'POST';
     const url = customerId
-      ? `http://localhost:5000/api/admin/customers/${customerId}`
-      : 'http://localhost:5000/api/admin/customers';
+      ? `${API_BASE}/admin/customers/${customerId}`
+      : `${API_BASE}/admin/customers`;
 
     fetch(url, {
       method,
