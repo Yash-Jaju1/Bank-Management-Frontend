@@ -1,0 +1,120 @@
+.dashboard-container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 1.5rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.logout-btn {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  color: var(--bg-color);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: var(--accent-color);
+}
+
+.account-info p {
+  font-size: 1.1rem;
+  margin: 0.3rem 0;
+}
+
+.transaction-history h2 {
+  margin-bottom: 0.8rem;
+  color: var(--primary-color);
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.transaction-table th,
+.transaction-table td {
+  border: 1px solid var(--primary-color);
+  padding: 0.6rem 0.8rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.transaction-table th {
+  background-color: var(--nav-bg);
+}
+
+.transaction-table tbody tr:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.no-transactions {
+  text-align: center;
+  font-style: italic;
+  padding: 1rem;
+  color: var(--accent-color);
+}
+
+.dashboard-nav {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  padding: 0.7rem 1.3rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+@media (max-width: 600px) {
+  .dashboard-nav {
+    flex-direction: column;
+  }
+
+  .nav-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.transaction-link {
+  color: var(--text-color);       /* match regular text color */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.transaction-link:hover,
+.transaction-link:focus {
+  color: black;                   /* black on hover/focus for contrast */
+  text-decoration: underline;
+  outline: none;
+}
+

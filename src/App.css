@@ -14,18 +14,20 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--nav-bg);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +37,180 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* CSS Variables for light theme */
+:root {
+  --bg-color: #f3f4f6;
+  --text-color: #333;
+  --primary-color: #8fd5a1;
+  --accent-color: #a1c8e3;   /* pastel accent for light mode */
+  --nav-bg: #fff;
+}
+
+/* CSS Variables for dark theme */
+[data-theme='dark'] {
+  --bg-color: #1f1f2e;         /* Deep, muted blue-black */
+  --text-color: #dcdcdc;       /* Soft light gray, easy on the eyes */
+  --primary-color: #a2d5c6;    /* Pastel turquoise */
+  --accent-color: #76c7c0;     /* Soft green-cyan for accents and highlights */
+  --nav-bg: #292b3e;           /* Slightly lighter dark for the navbar */
+}
+
+
+/* Apply base body styles */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+}
+
+/* Add container styling for dashboards and similar pages */
+.dashboard-container,
+.login-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+  background: var(--bg-color);
+  color: var(--text-color);
+  min-height: 80vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme toggle button styling - emoji toggle */
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;  /* make emoji larger */
+  padding: 0.2rem 0.4rem;
+  color: var(--primary-color); /* theme-aware color */
+  transition: color 0.3s ease;
+}
+
+.theme-toggle-btn:hover,
+.theme-toggle-btn:focus {
+  color: var(--accent-color, var(--primary-color));
+  outline: none;
+}
+
+.customer-register-container {
+  max-width: 400px;
+  margin: 40px auto; /* centers horizontally and adds vertical spacing */
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-color, #fff); /* default, overridden in theme classes */
+  color: var(--text-color, #222);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.customer-register-container.light {
+  background-color: #fff;
+  color: #222;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+}
+
+.customer-register-container.dark {
+  background-color: #181824;
+  color: #eee;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.1);
+}
+
+.customer-register-container input,
+.customer-register-container select,
+.customer-register-container button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.customer-register-container.dark input,
+.customer-register-container.dark select {
+  background-color: #282c3a;
+  border-color: #555;
+  color: #eee;
+}
+
+.customer-register-container.dark button {
+  background-color: #3399ff;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.customer-register-container h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 1.8rem;
+}
+
+.customer-register-container button:hover {
+  opacity: 0.9;
+}
+
+.customer-register-container form input,
+.customer-register-container form select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 18px;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.customer-register-container.light form input,
+.customer-register-container.light form select {
+  background-color: #fff;
+  border-color: #ccc;
+  color: #222;
+}
+.customer-register-container.dark form input,
+.customer-register-container.dark form select {
+  background-color: #282c3a;
+  border-color: #555;
+  color: #eee;
+}
+
+.customer-register-container form input:focus,
+.customer-register-container form select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.customer-register-container button {
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.customer-register-container button:hover {
+  background-color: #0056b3;
+}
+
+.customer-register-container p {
+  text-align: center;
+  font-weight: 600;
+  margin-top: 15px;
 }

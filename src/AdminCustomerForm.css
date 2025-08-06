@@ -1,0 +1,134 @@
+.admincustomerform {
+  max-width: 380px;
+  margin: 0 auto;
+  background-color: var(--nav-bg);
+  padding: 1rem 1.5rem;      /* reduced padding */
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
+}
+
+
+.admincustomerform h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 700;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.6rem;
+}
+
+.admincustomerform label {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.admincustomerform input,
+.admincustomerform select,
+.admincustomerform textarea {
+  padding: 0.45rem 0.8rem;
+  border-radius: 7px;
+  border: 2px solid var(--primary-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 40px;
+  max-height: 120px;          /* limit height */
+  overflow-y: auto;           /* scroll inside textarea if needed */
+}
+
+.admincustomerform input:focus,
+.admincustomerform select:focus,
+.admincustomerform textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.submit-btn {
+  flex-grow: 3;
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.7rem 1.2rem;
+  font-weight: 700;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: var(--accent-color);
+  outline: none;
+}
+
+.cancel-btn {
+  flex-grow: 1;
+  background-color: #999;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 7px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.cancel-btn:hover,
+.cancel-btn:focus {
+  background-color: #666;
+  outline: none;
+}
+
+.form-message {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-align: center;
+  user-select: none;
+}
+
+@media (max-width: 420px) {
+  .admincustomerform {
+    padding: 1rem 1.2rem;
+    max-width: 100%;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    flex-grow: 0;
+    width: 100%;
+  }
+}

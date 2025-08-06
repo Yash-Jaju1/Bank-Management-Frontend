@@ -1,0 +1,121 @@
+.admindashboard-container {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 1.5rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.admindashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.logout-btn {
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  color: var(--bg-color);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: var(--accent-color);
+}
+
+.admindashboard-message {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.customer-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customer-table th,
+.customer-table td {
+  border: 1px solid var(--primary-color);
+  padding: 0.8rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.customer-table th {
+  background-color: var(--nav-bg);
+}
+
+.customer-table tbody tr:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.no-customers {
+  text-align: center;
+  font-style: italic;
+  padding: 1rem;
+  color: var(--accent-color);
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+@media (max-width: 600px) {
+  .admindashboard-container {
+    padding: 1rem;
+  }
+
+  .customer-table th,
+  .customer-table td {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+  }
+}
+
+.admindashboard-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.admin-nav-btn {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.06rem;
+  transition: background-color 0.3s;
+}
+
+.admin-nav-btn:hover,
+.admin-nav-btn.active {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}

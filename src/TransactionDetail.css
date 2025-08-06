@@ -1,0 +1,47 @@
+.transaction-detail-container.light {
+  background-color: #ffffff;
+  color: #222222;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.transaction-detail-container.dark {
+  background-color: #181824;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+}
+
+.error-message.light, .loading-message.light {
+  color: #cc0000;
+  padding: 20px;
+  background-color: #fdd;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.error-message.dark, .loading-message.dark {
+  color: #ff6666;
+  padding: 20px;
+  background-color: #330000;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 30px auto;
+}
+
+.back-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #008cff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.back-btn:hover {
+  background-color: #005f99;
+}

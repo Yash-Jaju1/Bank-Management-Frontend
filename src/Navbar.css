@@ -1,0 +1,42 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--nav-bg);
+  color: var(--text-color);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar-logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.8rem;
+  padding: 0.2rem 0.4rem;
+  color: var(--primary-color);
+  transition: color 0.3s ease;
+}
+
+.theme-toggle-btn:hover,
+.theme-toggle-btn:focus {
+  color: var(--accent-color, var(--primary-color));
+  outline: none;
+}
+.navbar-brand {
+  text-decoration: none;
+  color: inherit; /* inherit navbar text color */
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.navbar-brand:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,141 @@
+.admincustomerlist-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 1rem 1.5rem 3rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.admincustomerlist-container h1 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem 0.8rem;
+  border: 2px solid var(--primary-color);
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+.message {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.customers-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.customers-table th,
+.customers-table td {
+  border: 1px solid var(--primary-color);
+  padding: 0.6rem 0.8rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.customers-table th {
+  background-color: var(--nav-bg);
+}
+
+.customers-table tbody tr:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.no-customers {
+  text-align: center;
+  font-style: italic;
+  padding: 1rem;
+  color: var(--accent-color);
+}
+
+.edit-btn,
+.details-btn,
+.delete-btn {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  border-radius: 6px;
+  padding: 0.3rem 0.7rem;
+  color: var(--primary-color);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover,
+.details-btn:hover {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+}
+
+.delete-btn:hover {
+  background-color: #d9534f;
+  border-color: #d9534f;
+  color: white;
+}
+
+.pagination {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pagination button {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.pagination button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: var(--accent-color);
+}
+
+.add-customer-btn {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.add-customer-btn:hover {
+  background-color: var(--accent-color);
+}

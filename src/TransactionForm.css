@@ -1,0 +1,103 @@
+/* TransactionForm.css */
+.transaction-container {
+  max-width: 480px;
+  margin: 2rem auto;
+  background-color: var(--nav-bg);
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  color: var(--text-color);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.transaction-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.9rem;
+  color: var(--primary-color);
+  text-align: center;
+  font-weight: 700;
+}
+
+.transaction-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.transaction-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  user-select: none;
+}
+
+.transaction-form input,
+.transaction-form select,
+.transaction-form textarea {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  border: 2px solid var(--primary-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  resize: vertical;
+  min-height: 38px;
+}
+
+.transaction-form input:focus,
+.transaction-form select:focus,
+.transaction-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+.submit-btn {
+  padding: 0.75rem 1.6rem;
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+  align-self: flex-start;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: var(--accent-color);
+  outline: none;
+}
+
+.form-message {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  text-align: center;
+  user-select: none;
+}
+
+@media (max-width: 520px) {
+  .transaction-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+.transaction-container.dark {
+  background: #242333;
+  color: #fff;
+}
+.transaction-container.light {
+  background: #fff;
+  color: #222;
+}

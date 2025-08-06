@@ -1,0 +1,32 @@
+.admincustomerpage-container {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 1rem 1.5rem;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.add-customer-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.add-customer-btn {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-customer-btn:hover {
+  background-color: var(--accent-color);
+}

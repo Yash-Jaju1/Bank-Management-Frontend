@@ -1,0 +1,29 @@
+.admindashboard-nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.admin-nav-btn {
+  background-color: var(--primary-color);
+  color: var(--bg-color);
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.06rem;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.admin-nav-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+/* Active tab highlight */
+.admin-nav-btn.active {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  box-shadow: 0 0 10px var(--accent-color);
+}
